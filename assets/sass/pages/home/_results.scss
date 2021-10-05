@@ -1,0 +1,94 @@
+@use "../../abstracts" as *;
+
+.results{
+    position: relative;
+
+    &::before{
+        position: absolute;
+        top: -15rem;
+        left: 0;
+        display: block;
+        content: '';
+        width: 18.4rem;
+        height: 30rem;
+        background:{
+            image: url('../images/vetor-resultados.svg');
+            size: contain;
+            repeat: no-repeat;
+        }
+        z-index: 0;
+    }
+
+    &__row{
+        position: relative;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        z-index: 2;
+
+        &__card{
+            &__header{
+                h3{
+                    margin-left: auto;
+                    margin-right: auto;
+                    width: 90%;
+                    font-size: var(--fs-300);
+                    text-align: center;
+                }
+            }
+
+            p{
+                text-align: center;
+                font-size: 1.4rem;
+            }
+        }
+    }
+
+    //breakpoint 1366px
+    @include bp(1366px){
+        &::before{
+            top: calc(-15rem / 1.25);
+            left: 0;
+            display: block;
+            content: '';
+            width: calc(18.4rem / 1.25);
+            height: calc(30rem / 1.25);
+            z-index: 0;
+        }
+    }
+
+    //breakpoint tablet
+    @include mq(md){
+        &::before{
+            top: calc(-15rem / 1.5);
+            left: 0;
+            display: block;
+            content: '';
+            width: calc(18.4rem / 1.5);
+            height: calc(30rem / 1.5);
+            z-index: 0;
+        }
+
+        &__row{
+            &__card{
+                padding: var(--fs-200);
+                background: var(--clr-white-500);
+                border-left: 5px solid var(--clr-neutral-500);
+                border-right: 5px solid var(--clr-neutral-500);
+                border-radius: 1rem;
+                box-shadow: 0 5px var(--fs-300) rgba(0,0,0, .16);
+
+                &__header{
+                    margin-bottom: var(--fs-200);
+                    h3{
+                        width: 100%;
+                        text-align: left;
+                    }
+                }
+
+                p{
+                    text-align: justify;
+                    font-size: 12px;
+                }
+            }
+        }
+    }
+}

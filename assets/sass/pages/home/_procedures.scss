@@ -1,0 +1,118 @@
+@use "../../abstracts" as *;
+
+.procedures{
+    position: relative;
+
+    &::before{
+        position: absolute;
+        bottom: -10rem;
+        right: 0;
+        display: block;
+        content: '';
+        width: 12.2rem;
+        height: 19.9rem;
+        background:{
+            image: url('../images/vetor-procedimentos.svg');
+            size: contain;
+            repeat: no-repeat;
+        }
+        z-index: 0;
+    }
+
+    &__row{
+        grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+        z-index: 2;
+
+        &__card{
+            position: relative;
+            width: 100%;
+            background: lightcoral;
+            padding: 10px;
+
+            &__image{
+                width: 100%;
+                height: 20rem;
+
+                img{
+                    max-width: 100%;
+                    max-height: 100%;
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    object-position: center;
+                }
+            }
+
+            &__body{
+                background: #ccc;
+                max-height: 20rem;
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                overflow: hidden;
+
+                &__header{
+                    h3{
+                        font-size: 2.2rem;
+                        text-align: center;
+                    }
+                }
+
+                &__content{
+                    margin-top: auto;
+                    text-align: center;
+
+                    p{
+                        font-size: 1.4rem;
+                    }
+                }
+            }
+        }
+    }
+
+    //breakpoint tablet
+    @include mq(md){
+        &__header{
+            //align-items: flex-start;
+            padding-left: 4rem;
+
+            h2{
+
+                &::before{
+                    left: -4rem;
+                }
+            }
+
+            img{
+                display: none;
+            }
+
+            p{
+                text-align: left;
+            }
+        }
+    }
+
+    //breakpoint tablet
+    @include mq(sm){
+        &__header{
+            padding-left: 3.125rem;
+
+            h2{
+
+                &::before{
+                    left: -3.125rem;
+                }
+            }
+
+            img{
+                display: none;
+            }
+
+            p{
+                text-align: left;
+            }
+        }
+    }
+}

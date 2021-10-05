@@ -1,0 +1,25 @@
+@use "../../abstracts" as *;
+
+.owl-dots {
+    text-align: center;
+    margin-top: var(--fs-500);
+}
+
+.owl-dot {
+    width: var(--fs-200);
+    height: var(--fs-200);
+    border-radius: 3rem;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    background: var(--clr-black-500) !important;
+    margin: 0 var(--fs-100);
+    opacity: .3;
+    @include transition(background);
+
+    &:hover,
+    &.active {
+        opacity: 1;
+        @include transition(background);
+    }
+}

@@ -1,0 +1,47 @@
+@use "../../abstracts" as *;
+
+.fue{
+    position: relative;
+
+    &__row{
+        &__image{
+            width: 100%;
+            height: 100%;
+
+            img{
+                max-width: 100%;
+                max-height: 100%;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                object-position: top center;
+            }
+        }
+
+        &__container{
+            p{
+                text-align: justify;
+            }
+        }
+    }
+
+    //breakpoint tablet
+    @include mq(md){
+        &__row{
+            grid-template-columns: 1fr;
+
+            &__image{
+                height: 34rem;
+            }
+        }
+    }
+
+    //breakpoint mobile
+    @include mq(sm){
+        &__row{
+            &__image{
+                height: 25rem;
+            }
+        }
+    }
+}

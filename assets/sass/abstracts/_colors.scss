@@ -1,0 +1,43 @@
+$black: #000;
+$neutral: #333;
+$light-gray: #f8f8f8;
+$dark-gray: #E2E2E2;
+$gray: #F5F5F5;
+$white: #fff;
+
+$colors: (
+    "black": (
+        100: mix(white, $black, 80%),
+        200: mix(white, $black, 60%),
+        300: mix(white, $black, 40%),
+        400: mix(white, $black, 20%),
+        500: $black,
+        600: mix(black, $black, 20%),
+        700: mix(black, $black, 40%),
+        800: mix(black, $black, 60%),
+        900: mix(black, $black, 80%),
+    ),
+    "neutral": (
+        100: mix(white, $neutral, 80%),
+        200: mix(white, $neutral, 60%),
+        300: mix(white, $neutral, 40%),
+        400: mix(white, $neutral, 20%),
+        500: $neutral,
+        600: mix(black, $neutral, 20%),
+        700: mix(black, $neutral, 40%),
+        800: mix(black, $neutral, 60%),
+        900: mix(black, $neutral, 80%),
+    ),
+    "light-gray":(
+        500: $light-gray
+    ),
+    "dark-gray":(
+        500: $dark-gray
+    ),
+    "gray":(
+        500: $gray
+    ),
+    "white":(
+        500: $white
+    )
+);

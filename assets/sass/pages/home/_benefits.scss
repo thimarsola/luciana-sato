@@ -1,0 +1,41 @@
+@use "../../abstracts" as *;
+
+.benefits{
+    &__row{
+        grid-template-columns: 2fr 1fr;
+
+        &__container{
+            padding-left: var(--fs-500);
+
+            &__content{
+                text-align: justify;
+            }
+        }
+
+        &__image{
+            width: 100%;
+            height: 100%;
+
+            img{
+                max-width: 100%;
+                max-height: 100%;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                object-position: top right;
+            }
+        }
+    }
+
+    //breakpoint mobile
+    @include mq(sm){
+        &__row{
+            grid-template-columns: 1fr;
+
+            &__image{
+                height: 28rem;
+                order: -1;
+            }
+        }
+    }
+}

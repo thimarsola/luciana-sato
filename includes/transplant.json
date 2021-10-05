@@ -1,0 +1,24 @@
+{
+  "transplant": [
+    {
+      "step": "1",
+      "title": "Extração",
+      "description": "As UF são retiradas uma a uma de forma aleatória pode ser retirada do couro cabeludo, como também corporais (barba e tórax)."
+    },
+    {
+      "step": "2",
+      "title": "Coleta",
+      "description": "Logo após a retirada as UF são lavadas, e passam por uma análise em microscópios de alta resolução para seleção e controle de qualidade e contagem. São então armazenadas em solução conservante em temperatura adequada até serem implantadas."
+    },
+    {
+      "step": "3",
+      "title": "Separação, Lapidação e Contagem dos enxertos",
+      "description": "Pré incisões - são realizados pequenos “cortes” de 0,70mm a 0,80mm, desenhando as linhas de implantação capilar hairline, determinando a densidade, a descrição e anulação dos fios (UF)."
+    },
+    {
+      "step": "4",
+      "title": "Implantação",
+      "description": "Implantação das unidades foliculares (UF) é realizada através de um dispositivo chamado implanter, que diminui a manipulação dos enxertos e maior sobrevivência dos folículos."
+    }
+  ]
+}

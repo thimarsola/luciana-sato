@@ -1,0 +1,77 @@
+@use '../abstracts' as *;
+
+.btn {
+    display: inline-block !important;
+    margin: 0;
+    padding: var(--fs-200) var(--fs-600);
+    //border-radius: 20rem;
+    cursor: pointer;
+    vertical-align: middle;
+    outline: none;
+    border: none;
+    transform: scale(1);
+    transition: transform 0.3s ease-in-out;
+    line-height: 1.5 !important;
+
+    font: {
+        family: var(--medium) !important;
+        size: 1.8rem;
+    }
+
+    &:active {
+        transform: scale(1.1);
+        transition: transform 0.3s ease-in-out;
+    }
+}
+
+@each $color, $shade in $colors {
+    @each $prop, $value in $shade {
+        @if $value == white {
+            .btn-#{$color}-#{$prop} {
+                background-color: $value;
+                color: var(--clr-neutral-500);
+                @include transition(all);
+
+                &:hover {
+                    color: var(--clr-white-500);
+                    background-color: var(--clr-green-500);
+                    @include transition(all);
+                }
+            }
+        }@else if $color == neutral{
+            .btn-#{$color}-#{$prop} {
+                background-color: $value;
+                color: var(--clr-white-500);
+                @include transition(all);
+
+                &:hover {
+                    color: var(--clr-neutral-500);
+                    background-color: var(--clr-white-500);
+                    @include transition(all);
+                }
+            }
+        }@else if $color == #{black}{
+            .btn-#{$color}-#{$prop} {
+                background-color: $value;
+                color: var(--clr-white-500);
+                @include transition(all);
+
+                &:hover {
+                    background-color: lighten($value, 20%);
+                    @include transition(background-color);
+                }
+            }
+        }@else {
+            .btn-#{$color}-#{$prop} {
+                background-color: $value;
+                color: var(--clr-white-500);
+                @include transition(background-color);
+
+                &:hover {
+                    background-color: darken($value, 10%);
+                    @include transition(background-color);
+                }
+            }
+        }
+    }
+}

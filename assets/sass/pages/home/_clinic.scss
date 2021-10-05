@@ -1,0 +1,97 @@
+@use "../../abstracts" as *;
+
+.clinic{
+    position: relative;
+
+    &::before{
+        position: absolute;
+        top: var(--fs-1000);
+        left: 0;
+        display: block;
+        content: '';
+        width: 44.4rem;
+        height: 72.7rem;
+        background:{
+            image: url('../images/vetor-clinica.svg');
+            size: contain;
+            repeat: no-repeat;
+        }
+        z-index: -1;
+        opacity: .85;
+    }
+
+    &__row{
+        grid-template-columns: 60% 40%;
+
+        &__container{
+            text-align: justify;
+
+            &__header{
+                h3{
+                    font-size: var(--fs-400);
+                }
+            }
+        }
+        
+        &__image{
+            width: 100%;
+            height: 100%;
+
+            img{
+                max-width: 100%;
+                max-height: 100%;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                position: center;
+            }
+        }
+    }
+
+    //breakpoint 1440px
+    @include bp(1440px){
+        &::before{
+            width: calc(44.4rem / 1.5);
+            height: calc(72.7rem / 1.5);
+        }
+    }
+
+    //breakpoint 1024px
+    @include bp(1024px){
+        &::before{
+            width: calc(44.4rem / 2);
+            height: calc(72.7rem / 2);
+        }
+    }
+
+    //breakpoint tablet
+    @include mq(md){
+        &::before{
+            top: 20rem;
+            width: calc(44.4rem / 2.125);
+            height: calc(72.7rem / 2.125);
+        }
+
+        &__row{
+            grid-template-columns: repeat(2, 1fr);
+
+            &__container{
+                &__header{
+                    text-align: left;
+                }
+            }
+        }
+    }
+
+    //breakpoint mobile
+    @include mq(sm){
+
+        &__row{
+            grid-template-columns: 1fr;
+
+            &__image{
+                display: none;
+            }
+        }
+    }
+}

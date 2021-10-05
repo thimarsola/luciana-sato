@@ -1,0 +1,16 @@
+{
+  "procedures": [
+    {
+      "name": "Transplante Capilar Masculino",
+      "image": "image-transplante-capilar-masculino"
+    },
+    {
+      "name": "Transplante de Barba",
+      "image": "imagem-transplante-de-barba"
+    },
+    {
+      "name": "Transplante Capilar Feminino",
+      "image": "image-transplante-capilar-feminino"
+    }
+  ]
+}

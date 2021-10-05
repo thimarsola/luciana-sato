@@ -1,0 +1,19 @@
+@use '../abstracts' as *;
+
+@for $i from 1 through 10{
+    .p-#{$i}{
+        padding: calc(var(--fs-100) * #{$i});
+    }
+
+    .py-#{$i}{
+        padding: calc(var(--fs-100) * #{$i}) 0;
+    }
+
+    .pt-#{$i}{
+        padding-top: calc(var(--fs-100) * #{$i});
+    }
+
+    .pb-#{$i}{
+        padding-bottom: calc(var(--fs-100) * #{$i});
+    }
+}

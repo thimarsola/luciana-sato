@@ -1,0 +1,52 @@
+@use "../../abstracts" as *;
+
+.hero{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    color: var(--clr-black-500);
+    background:{
+        size: cover;
+        position: center;
+        image: url('../images/background-hero.jpg');
+    }
+
+    &__container{
+        max-width: 54rem;
+        width: 100%;
+
+        &__header{
+            p{
+                font-family: var(--medium) !important;
+                font-size: var(--fs-300);
+                line-height: 1.1 !important;
+            }
+
+            h2{
+                font-family: var(--bold) !important;
+                font-size: var(--fs-1000);
+            }
+        }
+    }
+
+    //breakpoint tablet
+    @include mq(md){
+        background-position: 60%;
+
+        &__container{
+            max-width: 40rem;
+        }
+    }
+
+    //breakpoint mobile
+    @include mq(sm){
+        &__container{
+            &__header{
+                h2{
+                    font-size: var(--fs-800);
+                }
+            }
+        }
+    }
+}

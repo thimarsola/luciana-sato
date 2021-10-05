@@ -1,0 +1,48 @@
+@use 'breakpoints' as b;
+@use 'container' as c;
+
+@mixin breakpoint($key) {
+    $size: map-get(c.$container-max-widths, $key);
+
+    @if c.$container-max-widths == x-small {
+        @media only screen and (max-width: $size) {
+            @content;
+        }
+    } @else {
+        @media only screen and (min-width: $size) {
+            @content;
+        }
+    }
+}
+
+@mixin mq($key) {
+    $size: map-get(b.$breakpoints, $key);
+
+    @media only screen and (max-width: $size) {
+        @content;
+    }
+}
+
+@mixin bp($size) {
+    @media only screen and (max-width: $size) {
+        @content;
+    }
+}
+
+@mixin transition($key) {
+    transition: $key 300ms ease-in-out;
+}
+
+@mixin col-l($key) {
+    flex: 0 0 calc(#{$key} - var(--gap));
+    margin-right: var(--gap);
+}
+
+@mixin col-r($key) {
+    flex: 0 0 calc(#{$key} - var(--gap));
+    margin-left: var(--gap);
+}
+
+@mixin padding($key) {
+    padding: $key 0;
+}

@@ -1,0 +1,234 @@
+@use '../abstracts' as *;
+
+.header {
+    position: fixed;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    min-height: 10rem;
+    z-index: 200;
+    background: transparent;
+    @include transition(background);
+
+    &__navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        &__brand{
+            a{
+                font-size: var(--fs-400);
+                color: var(--clr-black-500);
+            }
+        }
+
+        &__section {
+
+            &__toggle{
+                display: flex;
+                flex-direction: column;
+                align-items: flex-end;
+                cursor: pointer;
+
+                &:hover{
+                    span{
+                        width: var(--fs-400);
+                        background: var(--clr-black-300);
+                        @include transition(all);
+                    }
+                }
+
+                span{
+                    display: block;
+                    width: var(--fs-300);
+                    height: 3px;
+                    background: var(--clr-black-500);
+                    transform-origin: right;
+                    @include transition(all);
+
+                    &:nth-child(1), &:nth-child(3) {
+                        transform: initial;
+                        @include transition(all);
+                    }
+
+                    &:nth-child(2) {
+                        margin: 5px 0;
+                        width: var(--fs-400);
+                        opacity: 1;
+                        @include transition(all);
+                    }
+                }
+            }
+
+            &__container {
+                min-width: 50rem;
+                height: 100vh;
+                position: absolute;
+                top: 0;
+                right: 0;
+                display: block;
+                background: var(--clr-black-500);
+                z-index: 200;
+                transform-origin: right;
+                transform: scaleX(0);
+                @include transition(transform);
+
+                &__nav{
+                    padding: var(--fs-1000);
+                    width: 100%;
+                    height: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-start;
+                    color: var(--clr-white-500) !important;
+                    overflow: auto;
+
+                    ul{
+                        li{
+                            display: block;
+                            margin: var(--fs-200) 0;
+                            font-size: 2.6rem;
+                            @include transition(color);
+
+                            &:hover{
+                                color: var(--clr-black-300);
+                                @include transition(color);
+                            }
+
+                            &.menu-item-has-children{
+                                & > a{
+                                    &::after{
+                                        display: inline-block;
+                                        margin-left: var(--fs-100);
+                                        content: '\25bc';
+                                        @include transition(content);
+                                    }
+                                }
+
+                                ul{
+                                    max-width: 100%;
+                                    padding: var(--fs-200);
+                                    font-size: var(--fs-300);
+                                    background: var(--clr-white-500);
+
+
+                                    li{
+                                        font-size: 2rem;
+                                        color: var(--clr-black-500);
+
+                                        &:hover{
+                                            color: var(--clr-black-300);
+                                            @include transition(color);
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    &--sticky{
+        background: rgba(#fff, .90);
+        box-shadow: 0 0 15px rgba(#000, .15);
+        @include transition(background);
+    }
+
+    &--active {
+        .header__navbar {
+            &__section {
+                &__toggle {
+                    position: absolute;
+                    top: 3.5rem;
+                    right: 9rem;
+                    z-index: 300;
+
+                    &:hover{
+                        span{
+                            background: var(--clr-black-300);
+                            @include transition(all);
+                        }
+                    }
+
+                    span{
+                        background: var(--clr-white-500);
+                        @include transition(all);
+
+                        &:nth-child(1) {
+                            transform-origin: center;
+                            transform: rotate(45deg) translate(.4rem, .4rem);
+                            @include transition(all);
+                        }
+
+                        &:nth-child(2) {
+                            opacity: 0;
+                            @include transition(all);
+                        }
+
+                        &:nth-child(3) {
+                            transform-origin: center;
+                            transform: rotate(-45deg) translate(.8rem, -.8rem);
+                            @include transition(all);
+                        }
+                    }
+                }
+
+                &__container {
+                    transform: scaleX(1);
+                    @include transition(transform);
+                }
+            }
+        }
+    }
+
+    //breakpoint tablet
+    @include mq(md){
+        &--active {
+            .header__navbar {
+                &__section {
+                    &__toggle {
+                        top: 4.4rem;
+                        right: 3.8rem;
+                    }
+                }
+            }
+        }
+    }
+
+    //breakpoint mobile
+    @include mq(sm){
+        &__navbar {
+            &__section {
+
+                &__container {
+                    min-width: initial;
+                }
+            }
+        }
+
+        &--active {
+            .header__navbar {
+                &__section {
+                    &__toggle {
+                        top: 4.4rem;
+                        right: 3rem;
+
+                        span{
+                            &:nth-child(3) {
+                                transform: rotate(-45deg) translate(1rem, -1rem);
+                            }
+                        }
+                    }
+
+                    &__container{
+                        min-width: initial;
+                        width: 95vw;
+                    }
+                }
+            }
+        }
+    }
+}
+

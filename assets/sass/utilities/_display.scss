@@ -1,0 +1,13 @@
+@use '../abstracts/mixins' as *;
+
+.d-none {
+    display: none !important;
+}
+
+.p-fixed {
+    position: -webkit-sticky !important;
+    position: sticky !important;
+    top: 0;
+    left: 0;
+    @include transition(position);
+}

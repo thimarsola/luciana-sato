@@ -1,0 +1,31 @@
+{
+  "name": "dralucianasato.com.br",
+  "version": "1.0.0",
+  "description": "Website develop by Goognet Digital Solution Agency",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass ./assets/sass/:./assets/css/ --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thimarsola/luciana-sato.git"
+  },
+  "author": "Thiago Marsola | Goognet Solução Digital",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/thimarsola/luciana-sato/issues"
+  },
+  "homepage": "https://github.com/thimarsola/luciana-sato#readme",
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-image": "^6.2.1",
+    "gulp-watch": "^5.0.1",
+    "gulp-webp": "^4.0.1"
+  },
+  "dependencies": {
+    "jquery": "^3.6.0",
+    "magnific-popup": "^1.1.0",
+    "owl.carousel": "^2.3.4",
+    "sweetalert2": "^11.1.5"
+  }
+}
